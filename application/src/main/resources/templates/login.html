@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title2</title>
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="/css/layui/layui.css" type="text/css" />
+    <style type="text/css">
+        #logDiv{
+           width:400px;
+           height: 250px;
+            position: absolute;
+            top: 30%;
+            left: 40%;
+        }
+        .td1{
+            width: 70px;
+            height: 30px;
+        }
+    </style>
+    <script type="application/javascript">
+        $(function(){
+
+            $("body").keydown(function() {
+                if (event.keyCode == "13") {//keyCode=13是回车键
+                    $('#logBut').click();//换成按钮的id即可
+                }
+            });
+
+        })
+        function doLogin() {
+            var name = $("#name").val();
+            var pwd = $("#pwd").val();
+            if(name == "" || pwd ==""){
+                errorMsg("用户名或者密码不能为空！");
+                return;
+            }
+            window.location.href =  "/doLogin?name=" + name+"&pwd="+pwd;
+        }
+        //报错提示
+        function errorMsg(errMsg) {
+            layer.msg(errMsg, {
+                icon : 2,
+                skin : 'layui-layer-molv',
+                time : 2000,
+            })
+        }
+    </script>
+</head>
+<body>
+    <div style="position: relative;"><img src="/image/zrn.jpg" width="100%" height="100%" /></div>
+    <div id="logDiv">
+        <table>
+            <tr>
+                <td class="td1"></td>
+                <td><input id="name" style="background-color:transparent;border:1;" type="text" name="name" lay-verify="name" autocomplete="off" placeholder="请输入用户名" class="layui-input"></td>
+            </tr>
+            <tr>
+                <td class="td1"></td>
+                <td> <button onclick="doLogin();" id="logBut" style="display: none;"></button> </td>
+            </tr>
+            <tr>
+                <td class="td1"></td>
+                <td> <input  id="pwd"  style= "background-color:transparent;border:1;" type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input"></td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <script type="text/javascript" src="/js/layui/layui.js"></script>
+</body>
+</html>

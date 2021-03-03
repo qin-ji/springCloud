@@ -1,0 +1,14 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8880/eureka/
+server:
+  port: 8883
+spring:
+  application:
+    name: feign
+feign:
+  hystrix:
+    enabled: true
+  level:
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN

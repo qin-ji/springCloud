@@ -1,0 +1,14 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/qin-ji/bigJ.git
+          username: qin-ji
+          password: Qin74654...
+          default-label: master
+          search-paths: src/com/cz

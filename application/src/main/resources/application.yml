@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8880/eureka/
+server:
+  port: 8881
+spring:
+  redis:
+    host: 140.143.197.165
+    password: Qin74654...
+    port: 6379
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  application:
+    name: application
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+  thymeleaf:
+    cache: false
+    thymeleaf:
+      encoding: UTF-8
+      content-type: text/html
+      mode: LEGACYHTML5
